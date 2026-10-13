@@ -237,7 +237,8 @@ public class SchedulerSimulation {
             for (Thread thread : processQueue) {
                 Process process = processMap.get(thread);
                 if (queueCount > 0) System.out.print(Colors.WHITE + " → " + Colors.RESET);
-                System.out.print(Colors.BRIGHT_CYAN + process.getName() + Colors.RESET);
+                System.out.print(Colors.BRIGHT_CYAN + process.getName() +
+                 " (Priority: " + process.getPriority() + ")" + Colors.RESET);
                 queueCount++;
             }
             if (queueCount == 0) {
@@ -308,6 +309,6 @@ public class SchedulerSimulation {
         System.out.println(Colors.BLUE + "  ➕ " + Colors.BOLD + Colors.CYAN + process.getName() + 
                           Colors.RESET + Colors.BLUE + " added to ready queue" + Colors.RESET + 
                           " │ Burst time: " + Colors.YELLOW + process.getBurstTime() + "ms" + 
-                          Colors.RESET + " │ Priority: " + process.getPriority());
+                          Colors.RESET );
     }
 }
