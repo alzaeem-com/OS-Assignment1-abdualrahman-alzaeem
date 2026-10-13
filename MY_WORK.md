@@ -356,32 +356,32 @@ This makes the scheduling fair because one process cannot use the CPU all the ti
 
 **Your Answer:** *(3-5 sentences per example)*
 
-### Example 1 (operating-system level): [Name of scenario]
+### Example 1 (operating-system level): [Operating System CPU Scheduling]
 
 **Description**:
-[Describe the real-world scenario.]
+An operating system shares CPU time between tasks. Each task gets a time quantum. If it does not finish, it returns to the ready queue.
 
 **Why Round-Robin works well here**:
-[Fairness, responsiveness, predictability?]
+It is fair because each task gets a turn. Context switching allows the CPU to move between tasks.
 
-### Example 2: [Name of application/scenario]
+### Example 2:  Server Requests 
 
 **Description**:
-[Describe the real-world scenario or application.]
+A server uses threads to handle different client requests. Each task gets time to run and may return to the queue if it does not finish.
 
 **Why Round-Robin works well here**:
-[Fairness, responsiveness, predictability?]
+It gives tasks a fair chance to run and helps prevent one task from using all the CPU time.
 
 ## Summary
 
 **Key concepts I understood through these questions:**
-1.
-2.
-3.
+1.How threads work.
+2.How Round-Robin scheduling works.
+3.Why context switching is important.
 
 **Concepts I need to study more:**
-1.
-2.
+1.Thread states.
+2.CPU scheduling
 
 ---
 
