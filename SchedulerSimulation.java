@@ -29,10 +29,11 @@ class Process implements Runnable {
     private int burstTime; // Total time the process requires to complete (in milliseconds)
     private int timeQuantum; // Time slice (time quantum) allowed per CPU access (in milliseconds)
     private int remainingTime;// Time left for the process to finish its execution
-    private int priority;
+    private int priority; // Random priority: 1 is lowest, 10 is highest
+    // Feature 3: Waiting time tracking
     private long waitingTime = 0;
 private long lastEnqueueTime = 0;
-private boolean waitingTimerStarted = false;
+private boolean waitingTimerStarted = false; 
     
 
     // Constructor to initialize the process with name, burst time, and time quantum
@@ -41,23 +42,24 @@ private boolean waitingTimerStarted = false;
         this.burstTime = burstTime;
         this.timeQuantum = timeQuantum;
         this.remainingTime = burstTime;// Initially, remaining time is equal to the burst time
-        this.priority = new Random().nextInt(10) + 1;
+        this.priority = new Random().nextInt(10) + 1; // Generate a random priority between 1 and 10
     }
     public int getPriority() {
     return priority;
 }
+    // Feature 3: Start tracking a process's waiting period
     public void startWaiting() {
     lastEnqueueTime = System.currentTimeMillis();
     waitingTimerStarted = true;
 }
-
+// Feature 3: Add the elapsed waiting time to the total
 public void stopWaiting() {
     if (waitingTimerStarted) {
         waitingTime += System.currentTimeMillis() - lastEnqueueTime;
         waitingTimerStarted = false;
     }
 }
-
+// Feature 3: Return the total waiting time in milliseconds
 public long getWaitingTime() { 
     return waitingTime;
 }
@@ -153,6 +155,7 @@ public long getWaitingTime() {
     public String getName() {
         return name;
     }
+    // Return the process priority
 
     public int getBurstTime() {
         return burstTime;
@@ -169,7 +172,7 @@ public long getWaitingTime() {
 }
 
 public class SchedulerSimulation {
-    static int contextSwitchCount = 0;
+    static int contextSwitchCount = 0; // Counts process execution starts
     public static void main(String[] args) {
         // ⚠️ IMPORTANT: Put your student ID here to seed the random number generator
         // This makes your output unique to you - DO NOT forget to change this!
@@ -267,11 +270,12 @@ public class SchedulerSimulation {
             System.out.println(Colors.BRIGHT_WHITE + "]" + Colors.RESET);
             System.out.println(Colors.BOLD + Colors.MAGENTA + "└" + "─".repeat(79) + Colors.RESET + "\n");
             
-            // Start the thread, which will run the process for one time quantum
-            
+            // Feature 3: Stop waiting-time tracking when the process starts running
             Process currentProcess = processMap.get(currentThread);
             currentProcess.stopWaiting();
-            contextSwitchCount++;
+            contextSwitchCount++; // Count each process execution start
+            
+            // Start the thread, which will run the process for one time quantum
             currentThread.start();
            
             
@@ -301,6 +305,8 @@ public class SchedulerSimulation {
                 }
             }
         }
+        // Feature 3: Print the final waiting-time summary table
+
         System.out.println("\n========== Waiting Time Summary ==========");
 System.out.printf("%-15s %-15s %-15s %-20s%n",
         "Process Name", "Burst Time", "Waiting Time", "Turnaround Time");
@@ -338,8 +344,10 @@ System.out.println("==========================================\n");
         // Create a new thread to run the process
         Thread thread = new Thread(process);
         
-        // Add the thread to the ready queue
+        
+        // Feature 3: Record when the process enters the ready queue
         process.startWaiting();
+        // Add the thread to the ready queue
         processQueue.add(thread); 
         
         // Map the thread to the process, so we can track the process associated with each thread
