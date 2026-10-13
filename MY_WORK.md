@@ -310,8 +310,11 @@ Ran the program again to check the results.
 > 💡 **TIP:** Note that the class named `Process` in our code is a *simulated* process, and it is run by a real Java *thread*. Explain that distinction and point to the `new Thread(process)` line in `addProcessToQueue()`.
 
 **Your Answer:** *(3-5 sentences)*
+A process is a running program, but a thread is a part of a program that does work.
+Processes have separate memory, but threads in the same program can share memory.
+In my code, the Process class is a simulated process, and new Thread(process) creates a real thread to run it.
 
-[Write your answer here.]
+
 
 ## Question 2: Ready Queue Behavior
 
@@ -323,12 +326,7 @@ Ran the program again to check the results.
 
 **Your Answer:** *(3-5 sentences)*
 
-[Write your answer here.]
 
-Example from my output:
-```
-[Paste a relevant snippet from your program output here showing a process being re-queued]
-```
 
 **Explanation of example:**
 [Explain what is happening in the output snippet you pasted.]
