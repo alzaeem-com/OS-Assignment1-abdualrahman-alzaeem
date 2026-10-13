@@ -344,16 +344,12 @@ System.out.println("==========================================\n");
         
         // Map the thread to the process, so we can track the process associated with each thread
         processMap.put(thread, process);
-        
-       ```java
 // Print a message indicating the process has entered the ready queue
-System.out.println(Colors.BLUE + "  ➕ " + Colors.BOLD + Colors.CYAN + process.getName() +
+System.out.println(Colors.BLUE + "  + " + Colors.BOLD + Colors.CYAN + process.getName() +
                   Colors.RESET + Colors.BLUE + " added to ready queue" + Colors.RESET +
                   " │ Burst time: " + Colors.YELLOW + process.getBurstTime() + "ms" +
                   Colors.RESET +
                   " │ Priority: " + Colors.MAGENTA + process.getPriority() +
                   Colors.RESET);
-```
-
     }
 }
