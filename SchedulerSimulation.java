@@ -169,12 +169,13 @@ public long getWaitingTime() {
 }
 
 public class SchedulerSimulation {
+    static int contextSwitchCount = 0;
     public static void main(String[] args) {
         // ⚠️ IMPORTANT: Put your student ID here to seed the random number generator
         // This makes your output unique to you - DO NOT forget to change this!
         int studentID = 446052674;  // ← CHANGE THIS TO YOUR ACTUAL STUDENT ID
 
-        static int contextSwitchCount = 0;
+        
 
 
     
@@ -267,10 +268,13 @@ public class SchedulerSimulation {
             System.out.println(Colors.BOLD + Colors.MAGENTA + "└" + "─".repeat(79) + Colors.RESET + "\n");
             
             // Start the thread, which will run the process for one time quantum
-            contextSwitchCount++;
+            
             Process currentProcess = processMap.get(currentThread);
             currentProcess.stopWaiting();
+            contextSwitchCount++;
             currentThread.start();
+           
+            
             
             try {
                 // Wait for the thread to finish its time quantum before continuing to the next process
@@ -341,10 +345,15 @@ System.out.println("==========================================\n");
         // Map the thread to the process, so we can track the process associated with each thread
         processMap.put(thread, process);
         
-        // Print a message indicating the process has entered the ready queue
-        System.out.println(Colors.BLUE + "  ➕ " + Colors.BOLD + Colors.CYAN + process.getName() + 
-                          Colors.RESET + Colors.BLUE + " added to ready queue" + Colors.RESET + 
-                          " │ Burst time: " + Colors.YELLOW + process.getBurstTime() + "ms" + 
-                          Colors.RESET );
+       ```java
+// Print a message indicating the process has entered the ready queue
+System.out.println(Colors.BLUE + "  ➕ " + Colors.BOLD + Colors.CYAN + process.getName() +
+                  Colors.RESET + Colors.BLUE + " added to ready queue" + Colors.RESET +
+                  " │ Burst time: " + Colors.YELLOW + process.getBurstTime() + "ms" +
+                  Colors.RESET +
+                  " │ Priority: " + Colors.MAGENTA + process.getPriority() +
+                  Colors.RESET);
+```
+
     }
 }
