@@ -230,33 +230,56 @@ Ran the program again to check the results.
 > 💡 **TIP:** Talk about thread creation (`Runnable`, `Thread.start()`), waiting with `Thread.join()`, simulating work with `Thread.sleep()`, and what surprised you.
 
 **Your Answer:** *(5-7 sentences)*
+1.I learned how to use threads in Java. 
+2.The Process class uses Runnable to run a process. 
+3.The Thread.start() method starts the thread.
+4.The Thread.join() method makes the program wait for the thread to finish.
+5.I also learned that Thread.sleep() can simulate the time needed to run a process.
+6.I was surprised that I needed to use threads and a queue together to simulate process scheduling.
 
 
-[Write your answer here.]
+
+
 
 ## Question 2: What was the most challenging part of this assignment?
 
 > 💡 **TIP:** Pick **one** specific challenge (understanding the code, one of the features, Git, the video) and say *why* it was hard.
 
 **Your Answer:** *(5-7 sentences)*
+1.The most challenging part was adding the context switch counter.
+2.I needed to put the counter in the correct place in the code. At first, I had some errors when I changed the code. 
+3.I used the error messages to find and fix the problems. 
+4.After that, I ran the program again to check the result. 
+5.This helped me learn how to find and fix errors in Java.
 
-[Write your answer here.]
+
+
 
 ## Question 3: How did you overcome the challenges you faced?
 
 > 💡 **TIP:** Describe your method: reading documentation, adding `System.out.println` to debug, re-reading the README, testing after each small change, asking for help.
 
 **Your Answer:** *(5-7 sentences)*
-
-[Write your answer here.]
+1. I faced some errors when I changed the Java code.
+2. I read the error messages to understand the problems.
+3. I checked the code and looked for mistakes.
+4. I asked for help when I did not understand how to fix an error.
+5. Then, I changed the code and ran it again.
+6. This helped me learn how to solve problems and improve my Java skills.
 
 ## Question 4: How can you apply multithreading concepts in real-world applications?
 
 > 💡 **TIP:** Use real applications you know (web browser, game, mobile app, music player) and connect each one to what you built here.
 
 **Your Answer:** *(5-7 sentences)*
+1. Multithreading is useful in many real-world applications.
+2. For example, a web browser can open pages while downloading files.
+3. A music player can play music while the user searches for songs.
+4. Mobile apps can use threads to do more than one task.
+5. In my project, I used threads to run processes in the simulation.
+6. I learned that threads help programs manage different tasks.
 
-[Write your answer here.]
+
 
 ### Optional: What would you like to learn more about?
 
