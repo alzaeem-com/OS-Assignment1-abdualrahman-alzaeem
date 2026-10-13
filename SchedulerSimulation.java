@@ -269,7 +269,7 @@ public class SchedulerSimulation {
             // Start the thread, which will run the process for one time quantum
             contextSwitchCount++;
             Process currentProcess = processMap.get(currentThread);
-currentProcess.stopWaiting();
+            currentProcess.stopWaiting();
             currentThread.start();
             
             try {
@@ -310,7 +310,7 @@ for (Process process : processMap.values()) {
             process.getName(), burst, waiting, turnaround);
 }
 
-System.out.println("==========================================\n");
+System.out.println("==========================================\n"); 
         
         // End of the scheduler simulation
         System.out.println(Colors.BOLD + Colors.BRIGHT_GREEN + 
@@ -336,7 +336,7 @@ System.out.println("==========================================\n");
         
         // Add the thread to the ready queue
         process.startWaiting();
-        processQueue.add(thread);
+        processQueue.add(thread); 
         
         // Map the thread to the process, so we can track the process associated with each thread
         processMap.put(thread, process);
