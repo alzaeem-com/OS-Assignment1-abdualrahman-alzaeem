@@ -325,11 +325,11 @@ In my code, the Process class is a simulated process, and new Thread(process) cr
 > 💡 **TIP:** Pick a process with a large burst time (e.g., more than 2 × time quantum) and count how many "added to ready queue" lines it has after the first one. Search your console for its name (e.g., `P3`).
 
 **Your Answer:** *(3-5 sentences)*
-
-
-
-**Explanation of example:**
-[Explain what is happening in the output snippet you pasted.]
+not finish within its time quantum, it goes back to the ready queue.
+In my program, process [P3] had a burst time of  2394ms and was added to the ready queue again 1 time before it finished.
+The process goes back to the end of the queue and waits for its next turn.
+Re-queueing is important because it gives other processes a chance to run.
+This makes the scheduling fair because one process cannot use the CPU all the time.
 
 ## Question 3: Thread Lifecycle
 
@@ -339,15 +339,14 @@ In my code, the Process class is a simulated process, and new Thread(process) cr
 
 **Your Answer:** *(3-5 sentences overall; one short explanation per state)*
 
-1. **New**: [When is P1 in the New state?]
+1. **New**: P1 is in the New state when new Thread(process) creates its thread in addProcessToQueue().
 
-2. **Runnable**: [When does P1 become Runnable?]
+2. **Runnable**: P1 becomes Runnable when Thread.start() is called in the scheduler loop.
 
-3. **Running**: [When is P1 Running?]
+3. **Running**: P1 runs when Java gives it CPU time. The Thread.sleep() call makes P1's thread sleep for a short time.
+4. **Waiting**: The main thread enters the Waiting state when it calls Thread.join() and waits for P1 to finish. P1's thread enters a timed waiting state when Thread.sleep() is called.
 
-4. **Waiting**: [When and why would a thread be Waiting?]
-
-5. **Terminated**: [When is P1 Terminated?]
+5. **Terminated**:P1 enters the Terminated state when its run() method finishes
 
 ## Question 4: Real-World Applications
 
