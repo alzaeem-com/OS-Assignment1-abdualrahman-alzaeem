@@ -129,95 +129,89 @@
 
 ## Your Development Log
 
-### Entry 1 - [Date and Time]
-**What I did**:
+### Entry 1 - [October 13, 2026, 1 PM]
+**What I did**: Created a GitHub account.
 
 **Details**:
+Created a new GitHub account and Opened GitHub and learned how to use the website
 
 **Challenges**:
-
+I was new to GitHub and needed to learn how to use it.
 **Solution**:
+I explored the website and learned the basic steps.
 
-**Time spent**:
+**Time spent**: 30 minutes approxamitly
 
 ---
 
-### Entry 2 - [Date and Time]
-**What I did**:
+### Entry 2 - [October 13, 2026, 1.30 PM]
+**What I did**: Added process priority to the program
 
-**Details**:
+**Details**: Added a random priority from 1 to 10 for each process.
 
-**Challenges**:
+**Challenges**: I needed to show the priority without changing the order of the processes
 
-**Solution**:
+**Solution**: I displayed the priority number but kept the FIFO queue.
 
-**Time spent**:
-
----
-
-### Entry 3 - [Date and Time]
-**What I did**:
-
-**Details**:
-
-**Challenges**:
-
-**Solution**:
-
-**Time spent**:
+**Time spent**: 1 houer approxamitly
 
 ---
 
-### Entry 4 - [Date and Time]
-**What I did**:
+### Entry 3 - [October 13, 2026, 2.30 PM]
+**What I did**:Added a context switch counter.
 
-**Details**:
+**Details**: Added a counter to the program and Increased the counter when a process started running and Printed the total number of context switches at the end.
+Tested the program to check the result.
 
-**Challenges**:
+**Challenges**: I needed to put the counter in the correct place.
 
-**Solution**:
+**Solution**: I added the counter to the main class and printed its value at the end
 
-**Time spent**:
-
----
-
-### Entry 5 - [Date and Time]
-**What I did**:
-
-**Details**:
-
-**Challenges**:
-
-**Solution**:
-
-**Time spent**:
+**Time spent**: 1 houer approxamitly
 
 ---
 
-### Entry 6 - [Optional - Date and Time]
-**What I did**:
+### Entry 4 - [October 13, 2026, 3.30 PM]
+**What I did**: Added waiting time tracking.
 
-**Details**:
+**Details**: Calculated the waiting time for each process and Added a table with process name, burst time, waiting time, and turnaround time.
 
-**Challenges**:
+**Challenges**: I needed to track the waiting time for each process.
 
-**Solution**:
+**Solution**: I added methods to record the start and end of the waiting time.
 
-**Time spent**:
+**Time spent**: 1 houer approxamitly
 
 ---
+
+### Entry 5 - [October 13, 2026, 4.30 PM]
+**What I did**: Ran the code and fixed errors.
+
+**Details**: Compiled the Java code using javac and Checked the error messages.
+Fixed syntax errors in the code.
+Ran the program again to check the results.
+
+**Challenges**: I had errors in the code, and the program did not compile.
+
+**Solution**: I checked the error messages and fixed the code.
+
+**Time spent**: 1 houer approxamitly
+
+---
+
+
 
 ## Development Log Summary
 
 > 💡 **TIP:** Fill this in **last**, after all entries are written.
 
-**Total time spent on assignment**: [X hours]
+**Total time spent on assignment**: [4.30 hours]
 
-**Most challenging part**:
+**Most challenging part**: Added a context switch counter
 
-**Most interesting learning**:
+**Most interesting learning**: I learned how to use Java threads and how the ready queue works.
 
-**What I would do differently next time**:
+**What I would do differently next time**: Improving my skills in Java and testing my code after each change. also try to find errors earlier and save time.
 
 ---
 
@@ -236,6 +230,7 @@
 > 💡 **TIP:** Talk about thread creation (`Runnable`, `Thread.start()`), waiting with `Thread.join()`, simulating work with `Thread.sleep()`, and what surprised you.
 
 **Your Answer:** *(5-7 sentences)*
+
 
 [Write your answer here.]
 
